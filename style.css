@@ -9,13 +9,16 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    padding: 20px;
+    line-height: 1.6;
 }
 
 .container {
     display: flex;
+    margin: 0 auto;
     width: 90%;
     max-width: 1000px;
-    background-color: #fff;
+    background-color: #e6e4e4;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -25,10 +28,10 @@ body {
 /* GAYA SIDEBAR              */
 /* ==================================== */
 .profile-sidebar {
-    width: 35%;
-    background-color: #e57373;
-    color: #fff;
-    padding: 40px 20px;
+    width: 30%;
+    background: linear-gradient(135deg, #2c3e50, #1a2530);
+    color: white;
+    padding: 30px 25px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -47,25 +50,65 @@ body {
 
 .profile-sidebar h2 {
     margin: 15px 0 5px 0;
-    font-size: 2.2em;
+    font-size: 1.8em;
     font-weight: bold;
 }
 
 .profile-sidebar .subtitle {
     font-size: 1.1em;
-    opacity: 0.9;
+    font-style: italic;
+    opacity: 0.85;
     margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.cv-contact-info h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.cv-contact-info p {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+.cv-contact-info i {
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+    color: #3498db;
+}
+
+.cv-social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
 }
 
 .social-icons a {
-    color: #fff;
-    font-size: 1.8em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
     margin: 0 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     transition: transform 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
 }
 
 .social-icons a:hover {
     transform: scale(1.1);
+    background: #1d2f3b;
+    transform: translateY(-3px);
 }
 
 /* ==================================== */
@@ -104,14 +147,35 @@ body {
 /* GAYA KONTEN UTAMA          */
 /* ==================================== */
 .main-content {
+    flex: 1;
     width: 65%;
     padding: 40px;
 }
 
 .main-content h1 {
-    font-size: 2.8em;
-    color: #333;
+    color: #333, #2c3e50;
+    font-size: 26px;
+    font-weight: 600;
+    position: relative;
+    padding-left: 12px;
     margin-bottom: 10px;
+}
+
+.cv-main-content h1:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    height: 24px;
+    width: 5px;
+    background: #3498db;
+    border-radius: 2px;
+}
+
+.cv-about-me .description {
+    font-size: 16px;
+    line-height: 1.7;
+    text-align: justify;
 }
 
 .main-content .tagline {
@@ -122,7 +186,7 @@ body {
 
 .button-creative-cv {
     display: inline-block;
-    background-color: #e57373;
+    background-color: #272844;
     color: #fff;
     padding: 12px 25px;
     border-radius: 30px;
@@ -134,7 +198,7 @@ body {
 }
 
 .button-creative-cv:hover {
-    background-color: #d35c5c;
+    background-color: #37386b;
 }
 
 .main-content .description {
@@ -142,6 +206,13 @@ body {
     line-height: 1.7;
     color: #555;
     margin-bottom: 15px;
+}
+
+.cv-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #0d27aa, transparent);
+    margin: 25px 0;
 }
 
 /* ==================================== */
@@ -154,12 +225,14 @@ body {
 .experience-item, .education-item {
     margin-bottom: 30px;
     padding-left: 15px;
-    border-left: 3px solid #e57373;
+    border-left: 3px solid #5b9da2;
 }
 
 .experience-item h3, .education-item h3 {
     margin-top: 0;
+    margin-bottom: 5px;
     color: #333;
+    font-size: 20px;
 }
 
 .experience-item .date, .education-item .date {
@@ -167,6 +240,40 @@ body {
     font-style: italic;
     margin-top: -10px;
     margin-bottom: 10px;
+}
+
+.job-location {
+    color: #868f90;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.company-name {
+    color: #07505f;
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 17px;
+}
+
+.date {
+    color: #7f8c8d;
+    font-style: italic;
+    margin-bottom: 12px;
+    display: inline-block;
+    background: #f5f7fa;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.experience-item ul {
+    padding-left: 20px;
+}
+
+.experience-item li {
+    margin-bottom: 8px;
+    text-align: justify;
+    line-height: 1.6;
 }
 
 /* ==================================== */
@@ -180,31 +287,44 @@ body {
 }
 
 .project-card {
+    display: flex;
+    flex-direction: column;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 8px;
+    border: 1px solid #eaecef;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
+    align-items: center;
+    min-height: 150px;
+    justify-content: center;
     overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 .project-card img {
-    width: 100px;
-    height: 100px;
+    background: white;
+    width: 50px;
+    height: 50px;
     object-fit: contain;
     margin-bottom: 15px;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .project-card h3 {
     margin: 0;
-    font-size: 1.2em;
-    color: #004d40;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3e50;
 }
 
 .project-card:hover {
+    border-color: #1c7fc1;
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* ==================================== */
@@ -217,164 +337,80 @@ body {
     padding: 0 20px;
 }
 
+.cv-skills h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
 .skills-list .skill-item {
-    background-color: #e0f2f1;
-    color: #004d40;
+    background-color: #68b5c8;
+    color: #0a4239;
     padding: 8px 15px;
     border-radius: 20px;
+    font-size: 14px;
     font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    background: rgba(165, 184, 224, 0.7);
+    transform: translateY(-2px);
 }
 
 /* ==================================== */
-/* GAYA UNTUK CV (REVISI)     */
+/* Resposive     */
 /* ==================================== */
-.cv-container {
-    max-width: 1200px;
-    min-height: 90vh;
-    align-items: flex-start;
-}
 
-.cv-main-content {
-    padding: 40px 50px;
-}
-
-.cv-section {
-    margin-bottom: 30px;
-}
-
-.cv-section h1 {
-    font-size: 2.2em;
-    color: #333;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
-    margin-bottom: 25px;
-}
-
-.cv-divider {
-    border: 0;
-    height: 1px;
-    background: #e0e0e0;
-    margin: 40px 0;
-}
-
-.profile-sidebar .cv-contact-info,
-.profile-sidebar .cv-skills {
-    text-align: left;
-    width: 100%;
-    margin-bottom: 30px;
-}
-
-.profile-sidebar .cv-contact-info h3,
-.profile-sidebar .cv-skills h3 {
-    color: #fff;
-    font-size: 1.3em;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
-    padding-bottom: 8px;
-    margin-bottom: 15px;
-}
-
-.profile-sidebar .cv-contact-info p {
-    font-size: 0.95em;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-}
-
-.profile-sidebar .cv-contact-info i {
-    margin-right: 10px;
-    font-size: 1.1em;
-}
-
-.cv-skills .skills-list {
-    justify-content: flex-start;
-    padding: 0;
-}
-
-.profile-sidebar .cv-social-icons {
-    margin-top: 30px;
-}
-
-.cv-experience .experience-item h3 {
-    margin-top: 0;
-    margin-bottom: 5px;
-    color: #333;
-    font-size: 1.4em;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
-
-.cv-experience .company-name {
-    font-weight: bold;
-    color: #555;
-    margin-top: -5px;
-    margin-bottom: 5px;
-}
-
-.cv-experience .date, .cv-education .date {
-    font-size: 0.95em;
-    color: #888;
-    font-style: italic;
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.cv-experience ul {
-    list-style: disc;
-    margin-left: 20px;
-    padding-left: 0;
-    font-size: 0.95em;
-    color: #444;
-}
-
-.cv-experience ul li {
-    margin-bottom: 5px;
-}
-
-.cv-education .job-location {
-    font-size: 0.8em;
-    color: #666;
-    font-style: italic;
-    font-weight: normal;
-}
-
-.cv-projects .projects-grid {
-    padding: 0;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-}
-
-/* ==================================== */
-/* RESPONSIVE DESIGN           */
-/* ==================================== */
-@media (max-width: 768px) {
-    .container, .cv-container {
+/* Responsif untuk Tablet */
+@media (max-width: 900px) {
+    .cv-container {
         flex-direction: column;
-        width: 100%;
-        border-radius: 0;
-        box-shadow: none;
-        min-height: auto;
-    }
-
-    .profile-sidebar, .main-content {
-        width: 100%;
-        padding: 30px 20px;
-    }
-
-    .profile-sidebar {
-        border-radius: 0 0 15px 15px;
-        align-items: flex-start;
     }
     
-    .profile-sidebar h2, .profile-sidebar .subtitle {
-        text-align: left;
+    .profile-sidebar {
         width: 100%;
+        padding: 25px;
     }
-
-    .profile-sidebar .profile-photo {
-        margin-left: 0;
+    
+    .cv-main-content {
+        padding: 30px;
     }
+    
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
-    .main-content {
-        padding-top: 30px;
+/* Responsif untuk Mobile */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    .cv-main-content {
+        padding: 20px;
+    }
+    
+    .profile-sidebar {
+        padding: 20px;
+    }
+    
+    .profile-photo {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cv-main-content h1 {
+        font-size: 22px;
+    }
+    
+    .experience-item h3, .education-item h3 {
+        font-size: 18px;
     }
 }
